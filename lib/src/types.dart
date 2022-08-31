@@ -3619,15 +3619,15 @@ class PermissionRequestResponse {
 class NavigationActionPolicy {
   final int _value;
 
-  const NavigationActionPolicy._internal(this._value);
+  const NavigationActionPolicy(this._value);
 
   int toValue() => _value;
 
   ///Cancel the navigation.
-  static const CANCEL = const NavigationActionPolicy._internal(0);
+  static const CANCEL = const NavigationActionPolicy(0);
 
   ///Allow the navigation to continue.
-  static const ALLOW = const NavigationActionPolicy._internal(1);
+  static const ALLOW = const NavigationActionPolicy(1);
 
   bool operator ==(value) => value == _value;
 
