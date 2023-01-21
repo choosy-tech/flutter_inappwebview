@@ -30,3 +30,4 @@ build/
 .fvm/
 
 flutter_driver_tests.log
+flutter_export_environment.sh
