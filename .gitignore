@@ -32,3 +32,4 @@ build/
 flutter_driver_tests.log
 tool/chromedriver
 tool/chromedriver.*
+flutter_export_environment.sh
