@@ -15,11 +15,11 @@ public enum NavigationActionPolicy {
   }
 
   public static NavigationActionPolicy fromValue(int value) {
-    for(NavigationActionPolicy type : NavigationActionPolicy.values()) {
-      if(value == type.value)
-        return type;
+    if (value == CANCEL.value) {
+      return CANCEL;
     }
-    throw new IllegalArgumentException("No enum constant: " + value);
+
+    return ALLOW;
   }
 
   public int rawValue() {
