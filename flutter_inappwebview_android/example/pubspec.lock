@@ -81,7 +81,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.11"
+    version: "1.0.12"
   flutter_inappwebview_internal_annotations:
     dependency: transitive
     description:
@@ -93,10 +93,11 @@ packages:
   flutter_inappwebview_platform_interface:
     dependency: transitive
     description:
-      name: flutter_inappwebview_platform_interface
-      sha256: "545fd4c25a07d2775f7d5af05a979b2cac4fbf79393b0a7f5d33ba39ba4f6187"
-      url: "https://pub.dev"
-    source: hosted
+      path: flutter_inappwebview_platform_interface
+      ref: "choosy-6.x"
+      resolved-ref: e66155c29d3701f7aa6c1fcf4adfbe22571b4055
+      url: "git@github.com:choosy-tech/flutter_inappwebview.git"
+    source: git
     version: "1.0.10"
   flutter_lints:
     dependency: "direct dev"
