@@ -1,3 +1,4 @@
+publish_to: none
 name: flutter_inappwebview_android
 description: Android implementation of the flutter_inappwebview plugin.
 version: 1.0.12
@@ -18,7 +19,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inappwebview_platform_interface: ^1.0.10
+  flutter_inappwebview_platform_interface:
+    git:
+      url: git@github.com:choosy-tech/flutter_inappwebview.git
+      ref: choosy-6.x
+      path: flutter_inappwebview_platform_interface
 
 dev_dependencies:
   flutter_test:
