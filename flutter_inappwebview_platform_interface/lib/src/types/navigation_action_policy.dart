@@ -20,4 +20,8 @@ class NavigationActionPolicy_ {
   ///
   ///**NOTE**: available only on iOS 14.5+. It will fallback to [CANCEL].
   static const DOWNLOAD = const NavigationActionPolicy_._internal(2);
+
+  static const THREE = const NavigationActionPolicy_._internal(3);
+
+  static const FOUR = const NavigationActionPolicy_._internal(4);
 }

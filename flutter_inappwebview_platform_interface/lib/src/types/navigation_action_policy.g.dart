@@ -27,12 +27,16 @@ class NavigationActionPolicy {
   ///
   ///**NOTE**: available only on iOS 14.5+. It will fallback to [CANCEL].
   static const DOWNLOAD = NavigationActionPolicy._internal(2, 2);
+  static const FOUR = NavigationActionPolicy._internal(4, 4);
+  static const THREE = NavigationActionPolicy._internal(3, 3);
 
   ///Set of all values of [NavigationActionPolicy].
   static final Set<NavigationActionPolicy> values = [
     NavigationActionPolicy.ALLOW,
     NavigationActionPolicy.CANCEL,
     NavigationActionPolicy.DOWNLOAD,
+    NavigationActionPolicy.FOUR,
+    NavigationActionPolicy.THREE,
   ].toSet();
 
   ///Gets a possible [NavigationActionPolicy] instance from [int] value.
@@ -82,6 +86,10 @@ class NavigationActionPolicy {
         return 'CANCEL';
       case 2:
         return 'DOWNLOAD';
+      case 4:
+        return 'FOUR';
+      case 3:
+        return 'THREE';
     }
     return _value.toString();
   }
