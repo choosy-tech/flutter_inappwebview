@@ -21,7 +21,7 @@ let CONSOLE_LOG_JS_PLUGIN_SCRIPT = PluginScript(
 let CONSOLE_LOG_JS_SOURCE = """
 (function(console) {
 
-    function _callHandler(oldLog, args) {
+    function _ch(oldLog, args) {
         var message = '';
         for (var i in args) {
             try {
@@ -31,21 +31,18 @@ let CONSOLE_LOG_JS_SOURCE = """
         var _windowId = \(WINDOW_ID_VARIABLE_JS_SOURCE);
         window.webkit.messageHandlers[oldLog].postMessage({'message': message, '_windowId': _windowId});
     }
-
-    var oldLogs = {
+    
+    var ols = {
         'consoleLog': console.log,
         'consoleDebug': console.debug,
         'consoleError': console.error,
         'consoleInfo': console.info,
         'consoleWarn': console.warn
     };
-
-    for (var k in oldLogs) {
-        (function(oldLog) {
-            console[oldLog.replace('console', '').toLowerCase()] = function() {
-                oldLogs[oldLog].apply(null, arguments);
-                _callHandler(oldLog, arguments);
-            }
+    
+    for (var k in ols) {
+        (function(ol) {
+            console[ol.replace('console', '').toLowerCase()] = function() {ols[ol].apply(null, arguments);_ch(ol, arguments);}
         })(k);
     }
 })(window.console);
