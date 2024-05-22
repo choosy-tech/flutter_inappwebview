@@ -14,29 +14,25 @@ public class ConsoleLogJS {
           null
   );
 
-  public static final String CONSOLE_LOG_JS_SOURCE = "(function(console) {" +
-          "   function _buildMessage(args) {" +
-          "     var message = '';" +
-          "     for (var i in args) {" +
-          "       try {" +
-          "         message += message === '' ? args[i] : ' ' + args[i];" +
-          "       } catch(ignored) {}" +
-          "     }" +
-          "     return message;" +
+  public static final String CONSOLE_LOG_JS_SOURCE = "(function(con) {" +
+          " function _bm(args) {" +
+          "   var message = '';" +
+          "   for (var i in args) {" +
+          "     try {" +
+          "       message += message === '' ? args[i] : ' ' + args[i];" +
+          "     } catch(ignored) {}" +
           "   }" +
-          "   var oldLogs = {" +
-          "       'log': console.log," +
-          "       'debug': console.debug," +
-          "       'error': console.error," +
-          "       'info': console.info," +
-          "       'warn': console.warn" +
-          "   };" +
-          "   for (var k in oldLogs) {" +
-          "       (function(oldLog) {" +
-          "           console[oldLog] = function() {" +
-          "               oldLogs[oldLog].call(console, _buildMessage(arguments));" +
-          "           }" +
-          "       })(k);" +
-          "   }" +
+          "   return message;" +
+          " }" +
+          " var ols = {" +
+          "     'log': con.log," +
+          "     'debug': con.debug," +
+          "     'error': con.error," +
+          "     'info': con.info," +
+          "     'warn': con.warn" +
+          " };" +
+          " for (var k in ols) {" +
+          "  (function(ol) {con[ol] = function(){ols[ol].call(con,_bm(arguments));}})(k);" +
+          " }" +
           "})(window.console);";
 }
